@@ -3,6 +3,8 @@ var g = document.getElementsByClassName("main")
 var add_btn = document.getElementById("add_btn")
 var clear = document.getElementById("clear")
 
+
+
 // Since add_btn is a button, we can add a onclick function
 add_btn.onclick = function(){
     //we getr the level id value
@@ -10,6 +12,8 @@ add_btn.onclick = function(){
     // we create a radio element
     var el = document.createElement("Input")
     // this is obsolete code pog
+    jam = new Data()
+    jam.jam()
     if(txt === null){
         alert("Add a choice!")
     }else{
