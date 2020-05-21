@@ -165,17 +165,17 @@ class Entries{
   }
 
   checkConflict(lvl){
-    this.scope = document.querySelectorAll("#id_Name.class_Entry");
 
+      this.scope = $("#id_Name.class_Entry");
     for(this.i = 0; this.i < this.scope.length; this.i++){
-      // console.log("comparing " + this.scope[this.i].innerText + " to " + lvl + "\n"); //(Debug Purposes)
-      this.result = (this.scope[this.i].innerText.localeCompare(lvl + "\n") == 0);
-      // console.log("Result: " + this.result + " Compare Result: " + this.scope[this.i].innerText.localeCompare(lvl + "\n")); //(Debug Purposes)
-      if(this.result){
+
+      this.str_index = this.scope[this.i].innerText.trim();
+      this.str_param = lvl.trim();
+      this.result = (String(this.str_index) === String(this.str_param));
+      if(this.result === true){
         return true;
       }
     }
-    // console.log("No COnflict"); //(Debug Purposes)
     return false;
   }
 
