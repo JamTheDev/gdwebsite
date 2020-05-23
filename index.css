@@ -64,7 +64,7 @@
 	
 	background-color: #FDA; /* dark yellow */
 	color: white;
-	width: calc(50% - 20px - 1%);
+	width: calc(50% - 20px - 1%); /* temporary shrink to compensate for radio circle */
 	height: auto;
 	margin: 10px;
 	padding: 0px;
@@ -96,40 +96,39 @@
 		}
 
 		.class_id {
-			color: #BB3; /* bright yellow */
+			color: #BB3; /* lighter yellow */
 		}
 		
 		.class_diff {
 			color: #D22; /* red */
 		}
 		
+		.class_stars {
+			color: #AA5; /* darker yellow */
+		}
 		
 		.class_dl {
-			color: #4B4; /* green */
+			color: #4B4; /* darker green */
 		}
 		
 		.class_likes {
-			color: #BB3; /* bright yellow */
+			color: #BB3; /* lighter yellow */
 		}
 		
 		.class_length {
-			color: #888; /* offwhite */
-		}
-		
-		.class_stars {
-			color: #AA5;/* gold */
+			color: #888; /* gray */
 		}
 		
 	.class_textdiv {	
 		float: right;
 		
-		background-color: #CFF; 
+		background-color: #CFF; /* light cyan/blue */
 		width: calc(60% - 40px);
 		padding: 10px;
 	}
 	
 		.class_Name {
-			color: #000; /* offwhite */
+			color: black;
 		}
 		
 		.class_author {
@@ -139,7 +138,7 @@
 	.class_desc {
 		float: right;
 		
-		background-color: #6D7;
+		background-color: #6D7; /* lighter green */
 		color: white;
 		width: calc(60% - 40px);
 		height: calc(5em + 20px);
