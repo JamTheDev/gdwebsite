@@ -47,5 +47,101 @@
       font-size: 70px;
   }
 
+/* Entry Divs */
 
+@font-face {
+	font-family: Pusab;
+	src: url("./fonts/pusab.otf");
+}
 
+@font-face {
+	font-family: Montserrat Regular;
+	src: url("./fonts/Montserrat/Montserrat-Regular.otf");
+}
+
+.class_Div {
+	display: inline-block;
+	
+	background-color: #FDA; /* dark yellow */
+	color: white;
+	width: calc(50% - 20px - 1%);
+	height: auto;
+	margin: 10px;
+	padding: 0px;
+	box-sizing: border-box;
+	
+	font-family: Montserrat Regular;
+	font-size: 20px;
+}
+
+	.class_Div > div {
+		line-height: 1.25;
+		margin: 20px;
+		box-sizing: border-box;
+	}
+
+	.class_statsdiv {
+		float: left;
+		
+		width: calc(40% - 40px);
+		height: 100%;
+	}
+		.class_statsdiv > div {
+			padding: 0px;
+		}
+
+		.class_diffIcon {
+			display: inline;
+			margin-bottom: 10px;
+		}
+
+		.class_id {
+			color: #BB3; /* bright yellow */
+		}
+		
+		.class_diff {
+			color: #D22; /* red */
+		}
+		
+		
+		.class_dl {
+			color: #4B4; /* green */
+		}
+		
+		.class_likes {
+			color: #BB3; /* bright yellow */
+		}
+		
+		.class_length {
+			color: #888; /* offwhite */
+		}
+		
+		.class_stars {
+			color: #AA5;/* gold */
+		}
+		
+	.class_textdiv {	
+		float: right;
+		
+		background-color: #CFF; 
+		width: calc(60% - 40px);
+		padding: 10px;
+	}
+	
+		.class_Name {
+			color: #000; /* offwhite */
+		}
+		
+		.class_author {
+			color: #22D; /* dark blue */
+		}
+
+	.class_desc {
+		float: right;
+		
+		background-color: #6D7;
+		color: white;
+		width: calc(60% - 40px);
+		height: calc(5em + 20px);
+		padding: 10px;
+	}
