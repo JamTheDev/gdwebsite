@@ -56,7 +56,7 @@ class Entries{
     this.l_diff = document.createElement("div");
     this.l_diff.innerHTML = this.lvl_diff;
     this.l_diff.setAttribute("id", "id_diff");
-    this.l_diff.setAttribute("class", "class_Entry");
+    this.l_diff.setAttribute("class", "class_Entry class_diff");
 	
 	this.l_diffIcon = document.createElement("img");
     this.l_diffIcon.setAttribute("class", "class_Entry class_diffIcon");
