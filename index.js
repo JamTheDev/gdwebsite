@@ -28,7 +28,7 @@ add_btn.onclick = function(){
                 alert("Invalid Level ID.")
             }else{
                 // you get the point here lol
-                var level_name = JSON.stringify(obj.name);
+                var level_name = obj.name;
                 var isFeatured = obj.featured;
 
                 if(isFeatured){
@@ -98,7 +98,7 @@ clear.onclick = function(){
     var s = $('.class_Div');
 
     console.log(r);
-    if(r.length != 0 && s.length != 0){
+    if(r.length != 0){
         console.log(1);
         r.remove();
         s.remove();
@@ -107,4 +107,3 @@ clear.onclick = function(){
     }
 
 }
- 
