@@ -4,11 +4,11 @@ class Entries{
 
   addRadioInput(lvl){
     this.lvl_rad_name = lvl;
-
     this.l_radio = document.createElement("input");
+    this.l_radio.setAttribute("id", "radio_" + this.lvl_rad_name);
     this.l_radio.setAttribute("type", "radio");
     this.l_radio.setAttribute("name", "vote");
-    this.l_radio.setAttribute("class", "class_Entry");
+    this.l_radio.setAttribute("class", "class_Entry class_Radio");
     this.l_radio.setAttribute("value", this.lvl_rad_name);
   }
 
