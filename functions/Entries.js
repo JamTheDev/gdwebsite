@@ -6,7 +6,6 @@ class Entries{
     this.lvl_rad_name = lvl;
 
     this.l_radio = document.createElement("input");
-    this.l_radio.setAttribute("id", "radio_" + lvl);
     this.l_radio.setAttribute("type", "radio");
     this.l_radio.setAttribute("name", "vote");
     this.l_radio.setAttribute("class", "class_Entry");
@@ -15,20 +14,18 @@ class Entries{
 
   addLevelName(lvl){
     this.lvl_name = lvl;
-
+    console.log(this.lvl_name);
     this.l_name = document.createElement("div");
     this.l_name.innerHTML = this.lvl_name + "<br />";
-    this.l_name.setAttribute("id", "id_Name");
     this.l_name.setAttribute("class", "class_Entry class_Name");
 
   }
-  
+
   addLevelDescription(desc){
     this.lvl_desc = desc;
 
     this.l_desc = document.createElement("div");
     this.l_desc.innerHTML = this.lvl_desc + "<br>";
-    this.l_desc.setAttribute("id","id_desc");
     this.l_desc.setAttribute("class", "class_Entry class_desc");
 
   }
@@ -38,15 +35,14 @@ class Entries{
 
     this.l_id = document.createElement("div");
     this.l_id.innerHTML = "ID: " + this.lvl_id;
-    this.l_id.setAttribute("id", "id_id");
     this.l_id.setAttribute("class", "class_Entry class_id");
   }
 
   addLevelAuthor(author){
     this.lvl_author = author;
+
     this.l_author = document.createElement("div");
     this.l_author.innerHTML = "by " + this.lvl_author;
-    this.l_author.setAttribute("id", "id_author");
     this.l_author.setAttribute("class", "class_Entry class_author");
   }
 
@@ -55,13 +51,12 @@ class Entries{
 
     this.l_diff = document.createElement("div");
     this.l_diff.innerHTML = this.lvl_diff;
-    this.l_diff.setAttribute("id", "id_diff");
     this.l_diff.setAttribute("class", "class_Entry class_diff");
-	
-	this.l_diffIcon = document.createElement("img");
+
+	  this.l_diffIcon = document.createElement("img");
     this.l_diffIcon.setAttribute("class", "class_Entry class_diffIcon");
-	this.l_diffIcon.setAttribute("src", "./img/" + this.lvl_diff + ".png");
-	this.l_diffIcon.setAttribute("height", "80px");
+    this.l_diffIcon.setAttribute("src", "./img/" + this.lvl_diff + ".png");
+    this.l_diffIcon.setAttribute("height", "80px");
   }
 
   addDownload(dl){
@@ -141,7 +136,6 @@ class Entries{
     this.main = document.createElement("div");
     this.main.setAttribute("id","id_" + this.lvl_name);
     this.main.setAttribute("class", "class_Div");
-    this.main.setAttribute("for", "radio_" + this.lvl_name);
 
     this.addRadioInput(this.lvl_name);
 
@@ -149,20 +143,20 @@ class Entries{
    	this.l_statsdiv = document.createElement("div");
 	this.l_statsdiv.setAttribute("class", "class_Entry class_statsdiv");
 	this.main.appendChild(this.l_statsdiv);
-		
+
 		if(this.LevelDifficultyVisible) {
 		  this.l_statsdiv.appendChild(this.l_diffIcon);
 		}
-		
+
 		if(this.LevelIDVisible)
 		  this.l_statsdiv.appendChild(this.l_id);
 
 		if(this.LevelDifficultyVisible) {
 		  this.l_statsdiv.appendChild(this.l_diff);
 		}
-			
+
 		if(this.LevelStarsVisible)
-		  this.l_statsdiv.appendChild(this.l_stars);	
+		  this.l_statsdiv.appendChild(this.l_stars);
 
 		if(this.LevelDownloadVisible)
 		  this.l_statsdiv.appendChild(this.l_dl);
@@ -177,15 +171,15 @@ class Entries{
 	this.l_textdiv = document.createElement("div");
 	this.l_textdiv.setAttribute("class", "class_Entry class_textdiv");
 	this.main.appendChild(this.l_textdiv);
-	
+
 		this.l_textdiv.appendChild(this.l_name);
-	
+
 		if(this.LevelAuthorVisible)
 		  this.l_textdiv.appendChild(this.l_author);
-	  
+
 	// bottom right div, contains the description
 	this.main.appendChild(this.l_desc);
-	
+
 	// adds a cleared blank line in order to fix the floated divs
 	this.l_floatclear = document.createElement("br");
 	this.l_floatclear.setAttribute("clear", "both");
