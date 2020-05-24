@@ -14,7 +14,7 @@ class Entries{
 
   addLevelName(lvl){
     this.lvl_name = lvl;
-    console.log(this.lvl_name);
+
     this.l_name = document.createElement("div");
     this.l_name.innerHTML = this.lvl_name + "<br />";
     this.l_name.setAttribute("class", "class_Entry class_Name");
