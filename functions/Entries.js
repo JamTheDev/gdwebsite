@@ -63,7 +63,7 @@ class Entries{
     this.lvl_dl = dl;
     this.l_dl = document.createElement("div");
     this.l_dl.innerHTML = "Downloads: " + this.lvl_dl;
-    this.l_dl.setAttribute("id", "id_dl");
+
     this.l_dl.setAttribute("class", "class_Entry class_dl");
   }
 
@@ -71,7 +71,7 @@ class Entries{
     this.lvl_likes = likes;
     this.l_likes = document.createElement("div");
     this.l_likes.innerHTML = "Likes: " + this.lvl_likes;
-    this.l_likes.setAttribute("id", "id_likes");
+
     this.l_likes.setAttribute("class", "class_Entry class_likes");
 
   }
@@ -80,7 +80,6 @@ class Entries{
     this.lvl_length = length;
     this.l_length = document.createElement("div");
     this.l_length.innerHTML = "Length: " + this.lvl_length;
-    this.l_length.setAttribute("id", "id_length");
     this.l_length.setAttribute("class", "class_Entry class_length");
 
   }
@@ -89,7 +88,6 @@ class Entries{
     this.lvl_stars = stars;
     this.l_stars = document.createElement("div");
     this.l_stars.innerHTML = "Stars: " + this.lvl_stars;
-    this.l_stars.setAttribute("id","id_stars");
     this.l_stars.setAttribute("class", "class_Entry class_stars");
 
   }
