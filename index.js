@@ -59,7 +59,8 @@ add_btn.onclick = function(){
                     delta.addLevelName(level_name);
                     delta.addLevelID(obj.id);
                     delta.addLevelAuthor(obj.author);
-                    delta.addLevelDiffulty(obj.difficulty);
+                    delta.addLevelDifficulty(obj.difficulty);
+                    delta.addLevelDescription(obj.description);
                     delta.addDownload(obj.downloads);
                     delta.addLikes(obj.likes);
                     delta.addLength(obj.length);
