@@ -3,6 +3,7 @@ var g = document.getElementsByClassName("main")
 var add_btn = document.getElementById("add_btn")
 var clear = document.getElementById("clear")
 
+
 // Since add_btn is a button, we can add a onclick function
 add_btn.onclick = function(){
     //we getr the level id value
@@ -51,13 +52,14 @@ add_btn.onclick = function(){
                     // el.setAttribute("value", level_name);
                     // el.innerHTML = "<type='radio' name='poll' id='"+ level_name + "'>"
                     // document.getElementById("poll").appendChild(el);
-
-
+                
                     delta = new Entries(); // IDK WHAT TO NAME TO THIS SH*T...; Class for adding entries
-
+                    
                     //setters
+                    
                     delta.addLevelName(level_name);
                     delta.addLevelID(obj.id);
+                    
                     delta.addLevelAuthor(obj.author);
                     delta.addLevelDifficulty(obj.difficulty);
                     delta.addLevelDescription(obj.description);
@@ -65,7 +67,7 @@ add_btn.onclick = function(){
                     delta.addLikes(obj.likes);
                     delta.addLength(obj.length);
                     delta.addStars(obj.stars);
-
+                    
                     //getters
                     delta.setLevelIDVisible(true);
                     delta.setLevelAuthorVisible(true);
@@ -74,6 +76,7 @@ add_btn.onclick = function(){
                     delta.setLevelLikeVisible(true);
                     delta.setLevelLengthVisible(true);
                     delta.setLevelStarsVisible(true);
+                    
 
                     //Implementation
                     delta.deploy(document.getElementById('poll'));
