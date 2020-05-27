@@ -6,13 +6,13 @@ var clear = document.getElementById("clear")
 
 // Since add_btn is a button, we can add a onclick function
 add_btn.onclick = function(){
-    //we getr the level id value
+    //we get the level id value
     var txt = document.getElementById("textentry").value;
     // we create a radio element
     var el = document.createElement("Input")
     // this is obsolete code pog
     if(txt === null){
-        alert("Add a choice!")
+	    alert("Add a choice!")
     }else{
         // this is where the fun starts, its handling HTTP response time.
         // url is v v v v v v v v v v v v v v v and we add the level id the user put in
@@ -41,10 +41,18 @@ add_btn.onclick = function(){
 
                       var form_poll = document.createElement("form"); //This is the form: where the entries will be appended
                       form_poll.setAttribute("id", "poll");
+					  form_poll.setAttribute("onsubmit", "return submit_pollvote()");
 
-                      div_poll.appendChild(form_poll);
-                      document.body.appendChild(div_poll);
-                  }
+					  var submit_poll = document.createElement("button");
+					  submit_poll.innerHTML = "Send Vote";
+					  submit_poll.setAttribute("id", "poll_submit");
+					  submit_poll.setAttribute("type", "submit");
+					  submit_poll.setAttribute("form", "poll");
+					  
+					  document.body.appendChild(div_poll);
+					  div_poll.appendChild(form_poll);
+					  div_poll.appendChild(submit_poll);
+                    }
 
                     // el.setAttribute("id", level_name);
                     // el.setAttribute("type", "radio");
@@ -55,8 +63,7 @@ add_btn.onclick = function(){
                 
                     delta = new Entries(); // IDK WHAT TO NAME TO THIS SH*T...; Class for adding entries
                     
-                    //setters
-                    
+                    //setters 
                     delta.addLevelName(level_name);
                     delta.addLevelID(obj.id);
                     
@@ -77,21 +84,15 @@ add_btn.onclick = function(){
                     delta.setLevelLengthVisible(true);
                     delta.setLevelStarsVisible(true);
                     
-
                     //Implementation
                     delta.deploy(document.getElementById('poll'));
 
                 }else{
                     alert("level: '" + level_name + "' is not featured.")
                 }
-
             }
-
         })
-
     }
-
-
 }
 
 // this is just to delete a unnecessary item.
@@ -108,5 +109,16 @@ clear.onclick = function(){
     }else{
         alert("There are no entries to be cleared.");
     }
+}
 
+function submit_pollvote() {
+	var choice_radio = document.querySelector('input[name="vote"]:checked');
+	
+	if(choice_radio !== null) {
+		vote = choice_radio.value;
+		alert("Vote for level " + vote + " has been received.");
+	} else
+		alert("Select a level first!");
+	
+	return false;
 }
