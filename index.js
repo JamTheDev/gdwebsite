@@ -83,7 +83,7 @@ add_btn.onclick = function(){
                     delta.setLevelLikeVisible(true);
                     delta.setLevelLengthVisible(true);
                     delta.setLevelStarsVisible(true);
-                    
+                                      
                     //Implementation
                     delta.deploy(document.getElementById('poll'));
 
@@ -115,10 +115,15 @@ function submit_pollvote() {
 	var choice_radio = document.querySelector('input[name="vote"]:checked');
 	
 	if(choice_radio !== null) {
-		vote = choice_radio.value;
+        vote = choice_radio.value;
+        ins = new insert();
+        ins.writeData(vote, 1)
 		alert("Vote for level " + vote + " has been received.");
-	} else
-		alert("Select a level first!");
+	} else{
+        alert("Select a level first!");
+
+    }
+	
 	
 	return false;
 }

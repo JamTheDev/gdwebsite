@@ -59,41 +59,20 @@
 	src: url("./fonts/Montserrat/Montserrat-Regular.otf");
 }
 
-#main_poll {
-	width: 100vw;
-	margin: 0px;
-	padding: 0px;
-}
-
 .class_Div {
 	display: inline-block;
 	
 	background-color: #FDA; /* dark yellow */
 	color: white;
-	width: calc(50% - 50px); /* temporary shrink to compensate for radio circle */
+	width: calc(50% - 20px - 1%); /* temporary shrink to compensate for radio circle */
 	height: auto;
-	margin: 25px;
+	margin: 10px;
 	padding: 0px;
 	box-sizing: border-box;
 	
 	font-family: Montserrat Regular;
 	font-size: 20px;
 }
-
-	.class_Radio {
-		display: block;
-		float: left;
-		
-		width: 20px;
-		height: 20px;
-		margin: calc(3% - 10px);
-		border: 0px;
-	}
-	
-	#poll_submit {
-		display: block;
-		margin: 0 auto;
-	}
 
 	.class_Div > div {
 		line-height: 1.25;
@@ -144,7 +123,7 @@
 		float: right;
 		
 		background-color: #CFF; /* light cyan/blue */
-		width: calc(54% - 40px);
+		width: calc(60% - 40px);
 		padding: 10px;
 	}
 	
@@ -161,7 +140,7 @@
 		
 		background-color: #6D7; /* lighter green */
 		color: white;
-		width: calc(54% - 40px);
+		width: calc(60% - 40px);
 		height: calc(5em + 20px);
 		padding: 10px;
 	}
