@@ -1,9 +1,14 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden; /* idk where the extra width is coming from */
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
-    
-    background-color: #333;
+	background-color: #333;
     overflow: hidden;
-  }
+}
   
   /* Style the links inside the navigation bar */
   .topnav a {
@@ -30,7 +35,7 @@
     color: white;
   }
 
-  .mid{
+  .mid {
     transition: 500ms;
       color: white;
       font-family: 'Quicksand', sans-serif;
@@ -43,7 +48,7 @@
 
 
   .mid:hover{
-    transition: 500ms;
+	transition: 500ms;
       font-size: 70px;
   }
 
@@ -59,88 +64,105 @@
 	src: url("./fonts/Montserrat/Montserrat-Regular.otf");
 }
 
-.class_Div {
-	display: inline-block;
-	
-	background-color: #FDA; /* dark yellow */
-	color: white;
-	width: calc(50% - 20px - 1%); /* temporary shrink to compensate for radio circle */
-	height: auto;
-	margin: 10px;
+#poll_div {
+	width: 100%;
+	margin: 0px;
 	padding: 0px;
-	box-sizing: border-box;
-	
-	font-family: Montserrat Regular;
-	font-size: 20px;
 }
 
-	.class_Div > div {
-		line-height: 1.25;
-		margin: 20px;
-		box-sizing: border-box;
+	#poll {
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
 	}
 
-	.class_statsdiv {
-		float: left;
-		
-		width: calc(40% - 40px);
-		height: 100%;
-	}
-		.class_statsdiv > div {
+		.class_Entry {
+			display: inline-block;
+			
+			background-color: #FDA; /* dark yellow */
+			color: white;
+			width: calc(50% - 50px);
+			height: auto;
+			margin: 20px calc(25% + 25px);
 			padding: 0px;
+			box-sizing: border-box;
+			
+			font-family: Montserrat Regular;
+			font-size: 20px;
 		}
 
-		.class_diffIcon {
-			display: inline;
-			margin-bottom: 10px;
-		}
+			.class_Entry > div {
+				line-height: 1.25;
+				margin: 20px;
+				box-sizing: border-box;
+			}
 
-		.class_id {
-			color: #BB3; /* lighter yellow */
-		}
-		
-		.class_diff {
-			color: #D22; /* red */
-		}
-		
-		.class_stars {
-			color: #AA5; /* darker yellow */
-		}
-		
-		.class_dl {
-			color: #4B4; /* darker green */
-		}
-		
-		.class_likes {
-			color: #BB3; /* lighter yellow */
-		}
-		
-		.class_length {
-			color: #888; /* gray */
-		}
-		
-	.class_textdiv {	
-		float: right;
-		
-		background-color: #CFF; /* light cyan/blue */
-		width: calc(60% - 40px);
-		padding: 10px;
-	}
-	
-		.class_Name {
-			color: black;
-		}
-		
-		.class_author {
-			color: #22D; /* dark blue */
-		}
+			.class_statsdiv {
+				float: left;
+				
+				width: calc(40% - 40px);
+				height: 100%;
+			}
+				.class_statsdiv > div {
+					padding: 0px;
+				}
 
-	.class_desc {
-		float: right;
+				.class_diffFace {
+					display: inline;
+					margin-bottom: 10px;
+				}
+
+				.class_id {
+					color: #BB3; /* lighter yellow */
+				}
+				
+				.class_diff {
+					color: #D22; /* red */
+				}
+				
+				.class_stars {
+					color: #AA5; /* darker yellow */
+				}
+				
+				.class_dl {
+					color: #4B4; /* darker green */
+				}
+				
+				.class_likes {
+					color: #BB3; /* lighter yellow */
+				}
+				
+				.class_length {
+					color: #888; /* gray */
+				}
+				
+			.class_textdiv {	
+				float: right;
+				
+				background-color: #CFF; /* light cyan/blue */
+				width: calc(54% - 40px);
+				padding: 10px;
+			}
+			
+				.class_Name {
+					color: black;
+				}
+				
+				.class_author {
+					color: #22D; /* dark blue */
+				}
+
+			.class_desc {
+				float: right;
+				
+				background-color: #6D7; /* lighter green */
+				color: white;
+				width: calc(54% - 40px);
+				height: calc(5em + 20px);
+				padding: 10px;
+			}
 		
-		background-color: #6D7; /* lighter green */
-		color: white;
-		width: calc(60% - 40px);
-		height: calc(5em + 20px);
-		padding: 10px;
+	#poll_submit {
+		display: block;
+		margin: 20px auto;
 	}
