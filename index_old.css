@@ -1,0 +1,167 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    transition: 500ms;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    text-decoration: none;
+    transition: 500ms;
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .mid{
+    transition: 500ms;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      text-align: center;
+      background-color: #333;
+      font-size: 50px;
+     
+      
+  }
+
+
+  .mid:hover{
+    transition: 500ms;
+      font-size: 70px;
+  }
+
+/* Entry Divs */
+
+@font-face {
+	font-family: Pusab;
+	src: url("./fonts/pusab.otf");
+}
+
+@font-face {
+	font-family: Montserrat Regular;
+	src: url("./fonts/Montserrat/Montserrat-Regular.otf");
+}
+
+#main_poll {
+	width: 100vw;
+	margin: 0px;
+	padding: 0px;
+}
+
+.class_Div {
+	display: inline-block;
+	
+	background-color: #FDA; /* dark yellow */
+	color: white;
+	width: calc(50% - 50px); /* temporary shrink to compensate for radio circle */
+	height: auto;
+	margin: 25px;
+	padding: 0px;
+	box-sizing: border-box;
+	
+	font-family: Montserrat Regular;
+	font-size: 20px;
+}
+
+	.class_Radio {
+		display: block;
+		float: left;
+		
+		width: 20px;
+		height: 20px;
+		margin: calc(3% - 10px);
+		border: 0px;
+	}
+	
+	#poll_submit {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.class_Div > div {
+		line-height: 1.25;
+		margin: 20px;
+		box-sizing: border-box;
+	}
+
+	.class_statsdiv {
+		float: left;
+		
+		width: calc(40% - 40px);
+		height: 100%;
+	}
+		.class_statsdiv > div {
+			padding: 0px;
+		}
+
+		.class_diffIcon {
+			display: inline;
+			margin-bottom: 10px;
+		}
+
+		.class_id {
+			color: #BB3; /* lighter yellow */
+		}
+		
+		.class_diff {
+			color: #D22; /* red */
+		}
+		
+		.class_stars {
+			color: #AA5; /* darker yellow */
+		}
+		
+		.class_dl {
+			color: #4B4; /* darker green */
+		}
+		
+		.class_likes {
+			color: #BB3; /* lighter yellow */
+		}
+		
+		.class_length {
+			color: #888; /* gray */
+		}
+		
+	.class_textdiv {	
+		float: right;
+		
+		background-color: #CFF; /* light cyan/blue */
+		width: calc(54% - 40px);
+		padding: 10px;
+	}
+	
+		.class_Name {
+			color: black;
+		}
+		
+		.class_author {
+			color: #22D; /* dark blue */
+		}
+
+	.class_desc {
+		float: right;
+		
+		background-color: #6D7; /* lighter green */
+		color: white;
+		width: calc(54% - 40px);
+		height: calc(5em + 20px);
+		padding: 10px;
+	}
