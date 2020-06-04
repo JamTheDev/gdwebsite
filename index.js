@@ -45,7 +45,7 @@ add_btn.onclick = function(){
 					  var poll_leveldata = document.createElement("input");
 					  poll_leveldata.setAttribute("id", "poll_votedata");
 					  poll_leveldata.setAttribute("type", "hidden");
-					  poll_leveldata.setAttribute("value", JSON.stringify(obj));
+					  poll_leveldata.setAttribute("value", JSON.stringify(obj).replace(/\"/g, "&quot;")); //replace all instances of " with &quot;, so that the HTML code doesn't get messed up
 
 					  var poll_submit = document.createElement("button");
 					  poll_submit.innerHTML = "Send Vote";
@@ -128,7 +128,7 @@ function clearAllEntries(){
 
 function submitVote() {
 	var choice_string = document.getElementById("poll_votedata").value; //the entirety of the fetched obj, but stringified
-	var choice_json = JSON.parse(choice_string);
+	var choice_json = JSON.parse(choice_string.replace(/&quot;/g, "\"")); //replace all &quot with ", so that the string can be parsed
 	
 	//console.log("obj string: " + choice_string);
 	
