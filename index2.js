@@ -40,14 +40,14 @@ add_btn.onclick = function(){
                       var poll_form = document.createElement("form"); //This is the form: where the entries will be appended
                       poll_form.setAttribute("id", "poll");
 					  poll_form.setAttribute("onsubmit", "return submitVote()");
-                      poll_form.setAttribute("action", "checklevel.php");
+                      poll_form.setAttribute("action", "./php/checklevel.php");
                       poll_form.setAttribute("method", "post");
 
-					  var poll_leveldata = document.createElement("input");
-					  poll_leveldata.setAttribute("id", "poll_levelid");
-					  poll_leveldata.setAttribute("name", "poll_levelid");
-					  poll_leveldata.setAttribute("type", "hidden");
-					  poll_leveldata.setAttribute("value", txt); //replace all instances of " with &quot;, so that the HTML code doesn't get messed up
+					  var poll_levelid = document.createElement("input");
+					  poll_levelid.setAttribute("id", "poll_levelid");
+					  poll_levelid.setAttribute("name", "poll_levelid");
+					  poll_levelid.setAttribute("type", "hidden");
+					  poll_levelid.setAttribute("value", txt); //replace all instances of " with &quot;, so that the HTML code doesn't get messed up
 
 					  var poll_submit = document.createElement("button");
 					  poll_submit.innerHTML = "Send Vote";
@@ -57,7 +57,7 @@ add_btn.onclick = function(){
 					  
 					  document.body.appendChild(poll_div);
 					  poll_div.appendChild(poll_form);
-					  poll_form.appendChild(poll_leveldata);
+					  poll_form.appendChild(poll_levelid);
 					  poll_div.appendChild(poll_submit);
                     }
 
