@@ -7,10 +7,9 @@ var clear = document.getElementById("clear")
 add_btn.onclick = function(){
     //we get the level id value
     var txt = document.getElementById("textentry").value;
-    // we create a radio element
-    var el = document.createElement("input")
+
     // this is obsolete code pog
-    if(txt === null){
+    if(txt == null){
 	    alert("Add a choice!")
     }else{
         // this is where the fun starts, its handling HTTP response time.
@@ -132,7 +131,7 @@ function submitVote() {
 	
 	//console.log("obj string: " + choice_string);
 	
-	if(choice_json !== null) {
+	if(choice_json != null) {
         ins = new insert();
         ins.writeData(choice_json.id, 1)
 		alert("Vote for level " + choice_json.name + " has been received.");
