@@ -14,30 +14,20 @@ var firebaseConfig = {
 
 const db = firebase.database();
 
-
-  class insert{
-      writeData(level_name, vote){
+class insert{
+    writeData(level_name, vote){
         db.ref("/"+level_name).once("value", function(snapshot){
-            
-                var childData = snapshot.val();
-                if(childData == null){
-                    db.ref(level_name).set({
-                        vote
-                    })
-                
-                }else{
-                    db.ref(level_name).set({
-                        vote: vote+childData["vote"]
-                    })
-                }
-               
-            
+			var childData = snapshot.val();
+			
+			if(childData == null){
+				db.ref(level_name).set({
+					vote
+				})
+			}else{
+				db.ref(level_name).set({
+					vote: vote+childData["vote"]
+				})
+			}
         })
-
-          
-            
-
-      }
-
-
-  }
+    }
+}
