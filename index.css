@@ -100,7 +100,7 @@ body {
 			.class_statsdiv {
 				float: left;
 				
-				width: calc(40% - 40px);
+				width: calc(35% - 40px);
 				height: 100%;
 			}
 				.class_statsdiv > div {
@@ -140,7 +140,7 @@ body {
 				float: right;
 				
 				background-color: #CFF; /* light cyan/blue */
-				width: calc(54% - 40px);
+				width: calc(65% - 40px);
 				padding: 10px;
 			}
 			
@@ -157,8 +157,8 @@ body {
 				
 				background-color: #6D7; /* lighter green */
 				color: white;
-				width: calc(54% - 40px);
-				height: calc(5em + 20px);
+				width: calc(65% - 40px);
+				height: calc(6.25em + 20px);
 				padding: 10px;
 			}
 		
