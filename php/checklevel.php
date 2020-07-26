@@ -66,12 +66,16 @@
 			
 			//--- Send new level vote data to database
 			
+			$leveldata_to_put_DB = json_encode($new_leveldata_DB);
+			
 			// request to "PUT" JSON data into database
 			curl_setopt($curl_DB, CURLOPT_CUSTOMREQUEST, "PUT");
-			curl_setopt($curl_DB, CURLOPT_POSTFIELDS, json_encode($new_leveldata_DB));
+			curl_setopt($curl_DB, CURLOPT_POSTFIELDS, $leveldata_to_put_DB);
 
 			curl_setopt($curl_DB, CURLOPT_HTTPHEADER, array(
 				"Content-Type: application/json",
+				"Content-Length: " . strlen($leveldata_to_put_DB)
+				
 				// might be necessary for authentication in the future
 				//"Authorization: key=" . "AIzaSyC4frRn2JKi3RJr62_oyW8ZcL4pG-Hw3Bw"
 			));
