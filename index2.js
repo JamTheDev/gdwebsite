@@ -40,7 +40,6 @@ add_btn.onclick = function(){
                       var poll_form = document.createElement("form"); //This is the form: where the entries will be appended
                       poll_form.setAttribute("id", "poll");
 					  poll_form.setAttribute("onsubmit", "return submitVote()");
-                      poll_form.setAttribute("action", "./php/checklevel.php");
                       poll_form.setAttribute("method", "post");
 
 					  var poll_levelid = document.createElement("input");
