@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,9 +41,8 @@
 	
 		<?php
 			$levelid = (int)(htmlspecialchars($_POST["poll_levelid"]));
-			
-			echo "ID: " . $levelid . "<br/>";
-			
+			$_SESSION['levelid'] = $levelid;
+		
 			//---
 			
 			# Client URL
@@ -59,20 +60,18 @@
 			//---
 			
 			if ($response_GD === -1) {
-				echo "Invalid Level ID.";
-				
-				//todo: add a message for an invalid level ID, which can only be caused by tampering with client-side code
+				$GD_doesLevelExist = false;
 			} else {
+				$GD_doesLevelExist = true;
+				
 				//convert JSON string to PHP variable (array/object?);
 				$leveldata_GD = json_decode($response_GD);
-				
-				//(temp) this is to demonstrate accessing object keys in PHP
-				echo $leveldata_GD->name . " by " . $leveldata_GD->author . "<br/>";
+				$_SESSION['leveldata_GD'] = $leveldata_GD;
 				
 				//---
 				
 				if ($leveldata_GD->featured) {
-					echo "Level is featured.<br/>";
+					$GD_isLevelFeatured = true;
 					
 					$url_DB = "https://gdwebsite-1628b.firebaseio.com/" . $levelid . ".json";
 					
@@ -92,14 +91,12 @@
 					if (($current_leveldata_DB != null) && (array_key_exists("vote", $current_leveldata_DB))) {
 						$current_votes = (int)($current_leveldata_DB->vote);
 						$new_votes = $current_votes + 1;
-						
-						echo "Votes: " . $new_votes . "<br/>";
 					} else {
 						$current_votes = 0;
 						$new_votes = $current_votes + 1;
-						
-						echo "Level has not been voted previously.<br />";;
 					}
+					
+					$_SESSION['new_votes'] = $new_votes;
 
 					$new_leveldata_DB = array(
 						"vote" => ($new_votes)
@@ -124,7 +121,7 @@
 					$response2_DB = curl_exec($curl_DB);			
 					curl_close($curl_DB);
 				} else {
-					echo "Level is not featured.<br/>";
+					$GD_isLevelFeatured = false;
 					
 					//todo: add a message for a failed vote, which is always due to tampering with code
 					
@@ -133,7 +130,11 @@
 						the client-side level ID validation fails to work
 					*/
 				}
+				
+				$_SESSION['GD_isLevelFeatured'] = $GD_isLevelFeatured;
 			}
+			
+			$_SESSION['GD_doesLevelExist'] = $GD_doesLevelExist;
 			
 			header("Location: ./php/receive.php" , true, 303);
 			exit();

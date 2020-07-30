@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,12 +21,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="navbar">
+    <div id="navbar">
         <div class="topnav">
-            <a class="active" href="#">Home</a>
-            <a href="html/creators.html">Pinoy Creators</a>
-            <a href="html/demonlist.html">PH Demonlist</a>
-            <a href="html/about.html">About</a>
+            <a class="active" href="../index2.php">Home</a>
+            <a href="../html/creators.html">Pinoy Creators</a>
+            <a href="../html/demonlist.html">PH Demonlist</a>
+            <a href="../html/about.html">About</a>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -34,10 +36,34 @@
 	</div>
 	
 	<?php
-		if ($_SERVER['REQUEST_METHOD'] === "GET") {
-			echo "got it";
-		} else if ($_SERVER['REQUEST_METHOD'] === "POST") {
-			echo "posted it";
+		// todo: handle errors from non-existent variable when visiting receive.php without first going through the index2 form
+	
+		$levelid = $_SESSION['levelid'];
+			
+		//---
+		
+		$GD_doesLevelExist = $_SESSION['GD_doesLevelExist'];
+		
+		if ($GD_doesLevelExist) {
+			echo "ID: " . $levelid . "<br/>";
+			
+			$leveldata_GD = $_SESSION['leveldata_GD'];
+			
+			//(temp) this is to demonstrate accessing object keys in PHP
+			echo $leveldata_GD->name . " by " . $leveldata_GD->author . "<br/>";
+			
+			//---
+			
+			$GD_isLevelFeatured = $_SESSION['GD_isLevelFeatured'];
+			
+			if ($GD_isLevelFeatured) {
+				echo "Level is featured.<br/>";
+				echo "Vote has been received.<br/>";
+			} else {
+				echo "Level is not featured.<br/>";
+			}
+		} else {
+			echo "Invalid Level ID.";
 		}
 	?>
 </body>
