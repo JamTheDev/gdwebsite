@@ -137,7 +137,7 @@
 			
 			//---
 				
-			header("Location: ./php/receive.php" , true, 303);
+			header("Location: ./receive.php" , true, 303);
 		?>
 	</body>
 </html>
