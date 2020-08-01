@@ -36,34 +36,43 @@
 	</div>
 	
 	<?php
-		// todo: handle errors from non-existent variable when visiting receive.php without first going through the index2 form
-	
-		$levelid = $_SESSION['levelid'];
-			
-		//---
-		
-		$GD_doesLevelExist = $_SESSION['GD_doesLevelExist'];
-		
-		if ($GD_doesLevelExist) {
-			echo "ID: " . $levelid . "<br/>";
-			
-			$leveldata_GD = $_SESSION['leveldata_GD'];
-			
-			//(temp) this is to demonstrate accessing object keys in PHP
-			echo $leveldata_GD->name . " by " . $leveldata_GD->author . "<br/>";
+		if (isset($_SESSION['levelid'])) {
+			$levelid = $_SESSION['levelid'];
 			
 			//---
 			
-			$GD_isLevelFeatured = $_SESSION['GD_isLevelFeatured'];
+			$GD_doesLevelExist = $_SESSION['GD_doesLevelExist'];
 			
-			if ($GD_isLevelFeatured) {
-				echo "Level is featured.<br/>";
-				echo "Vote has been received.<br/>";
+			if ($GD_doesLevelExist) {
+				echo "ID: " . $levelid . "<br/>";
+				
+				$leveldata_GD = $_SESSION['leveldata_GD'];
+				
+				//(temp) this is to demonstrate accessing object keys in PHP
+				echo $leveldata_GD->name . " by " . $leveldata_GD->author . "<br/>";
+				
+				//---
+				
+				$GD_isLevelFeatured = $_SESSION['GD_isLevelFeatured'];
+				
+				if ($GD_isLevelFeatured) {
+					echo "Level is featured.<br/>";
+
+					if (isset($_SESSION['hasPersonVoted']) && $_SESSION['hasPersonVoted'] == true) {
+						echo "You have already voted for this level.<br/>";
+					} else {
+						echo "Vote has been received.<br/>";
+						$_SESSION['hasPersonVoted'] = true;
+					}
+				} else {
+					echo "Level is not featured.<br/>";
+					echo "Cannot send vote for a non-featured level.<br/>";
+				}
 			} else {
-				echo "Level is not featured.<br/>";
+				echo "Invalid Level ID.";
 			}
 		} else {
-			echo "Invalid Level ID.";
+			echo "You have not voted for a level yet.";
 		}
 	?>
 </body>
