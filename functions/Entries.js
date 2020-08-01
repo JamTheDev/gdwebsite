@@ -1,30 +1,7 @@
 class Entries{
 	
-  //adders
-  addLevelName(lvl){
-    this.lvl_name = lvl;
+  //--- ----- Adders
 
-    this.l_name = document.createElement("div");
-    this.l_name.innerHTML = this.lvl_name;
-    this.l_name.setAttribute("class", "class_Name");
-  }
-
-  addLevelDescription(desc){
-    this.lvl_desc = desc;
-
-    this.l_desc = document.createElement("div");
-    this.l_desc.innerHTML = this.lvl_desc;
-    this.l_desc.setAttribute("class", "class_desc");
-  }
-
-  addLevelID(id){
-    this.lvl_id = id;
-
-    this.l_id = document.createElement("div");
-    this.l_id.innerHTML = "ID: " + this.lvl_id;
-    this.l_id.setAttribute("class", "class_id");
-  }
-  
   addLevelDifficultyFace(diffFace){
 	this.lvl_diffFace = diffFace;
 	
@@ -33,21 +10,28 @@ class Entries{
     this.l_diffFace.setAttribute("src", "http://gdbrowser.com/difficulty/" + this.lvl_diffFace + ".png");
     this.l_diffFace.setAttribute("height", "80px");
   }
+  
+  addLevelID(id){
+    this.lvl_id = id;
 
-  addLevelAuthor(author){
-    this.lvl_author = author;
-
-    this.l_author = document.createElement("div");
-    this.l_author.innerHTML = "by " + this.lvl_author;
-    this.l_author.setAttribute("class", "class_author");
+    this.l_id = document.createElement("div");
+    this.l_id.innerHTML = "ID: " + this.lvl_id;
+    this.l_id.setAttribute("class", "class_id");
   }
-
+  
   addLevelDifficulty(diff){
     this.lvl_diff = diff;
 
     this.l_diff = document.createElement("div");
     this.l_diff.innerHTML = this.lvl_diff;
     this.l_diff.setAttribute("class", "class_diff");
+  }
+  
+  addStars(stars){
+    this.lvl_stars = stars;
+    this.l_stars = document.createElement("div");
+    this.l_stars.innerHTML = "Stars: " + this.lvl_stars;
+    this.l_stars.setAttribute("class", "class_stars");
   }
 
   addDownload(dl){
@@ -73,14 +57,37 @@ class Entries{
     this.l_length.setAttribute("class", "class_length");
   }
 
-  addStars(stars){
-    this.lvl_stars = stars;
-    this.l_stars = document.createElement("div");
-    this.l_stars.innerHTML = "Stars: " + this.lvl_stars;
-    this.l_stars.setAttribute("class", "class_stars");
-  }
+  
+  //---
+  
+  addLevelName(lvl){
+    this.lvl_name = lvl;
 
-  //setters
+    this.l_name = document.createElement("div");
+    this.l_name.innerHTML = this.lvl_name;
+    this.l_name.setAttribute("class", "class_Name");
+  }
+  
+  addLevelAuthor(author){
+    this.lvl_author = author;
+
+    this.l_author = document.createElement("div");
+    this.l_author.innerHTML = "by " + this.lvl_author;
+    this.l_author.setAttribute("class", "class_author");
+  }
+  
+  //---
+
+  addLevelDescription(desc){
+    this.lvl_desc = desc;
+
+    this.l_desc = document.createElement("div");
+    this.l_desc.innerHTML = this.lvl_desc;
+    this.l_desc.setAttribute("class", "class_desc");
+  }
+  
+  //--- ----- Setters
+
   setLevelDifficultyFaceVisible(bool){
     this.LevelDifficultyFaceVisible = bool;
   }
@@ -89,12 +96,12 @@ class Entries{
     this.LevelIDVisible = bool;
   }
 
-  setLevelAuthorVisible(bool){
-    this.LevelAuthorVisible = bool;
-  }
-
   setLevelDifficultyVisible(bool){
     this.LevelDifficultyVisible = bool;
+  }
+  
+  setLevelStarsVisible(bool){
+    this.LevelStarsVisible = bool;
   }
 
   setLevelDownloadVisible(bool){
@@ -109,33 +116,39 @@ class Entries{
     this.LevelLengthVisible = bool;
   }
 
-  setLevelStarsVisible(bool){
-    this.LevelStarsVisible = bool;
+  //---
+
+  setLevelAuthorVisible(bool){
+    this.LevelAuthorVisible = bool;
   }
+  
+  //--- -----
 
   preloadMain(){//deploy the div element.
     //console.log(this.lvl_name); //(Debug Purposes)
+
+	//--- -----
 
 	// main div for the whole entry
     this.main = document.createElement("div");
     this.main.setAttribute("id", "id_" + this.lvl_name);
     this.main.setAttribute("class", "class_Entry");
 
+	//--- -----
+
 	// left div, contains difficulty icon and stats
    	this.l_statsdiv = document.createElement("div");
 	this.l_statsdiv.setAttribute("class", "class_statsdiv");
 	this.main.appendChild(this.l_statsdiv);
 
-		if(this.LevelDifficultyFaceVisible) {
+		if(this.LevelDifficultyFaceVisible)
 		  this.l_statsdiv.appendChild(this.l_diffFace);
-		}
 
 		if(this.LevelIDVisible)
 		  this.l_statsdiv.appendChild(this.l_id);
 
-		if(this.LevelDifficultyVisible) {
+		if(this.LevelDifficultyVisible)
 		  this.l_statsdiv.appendChild(this.l_diff);
-		}
 
 		if(this.LevelStarsVisible)
 		  this.l_statsdiv.appendChild(this.l_stars);
@@ -149,6 +162,8 @@ class Entries{
 		if(this.LevelLengthVisible)
 		  this.l_statsdiv.appendChild(this.l_length);
 
+	//---
+
 	// top right div, contains level name and uploader/author
 	this.l_textdiv = document.createElement("div");
 	this.l_textdiv.setAttribute("class", "class_textdiv");
@@ -159,8 +174,12 @@ class Entries{
 		if(this.LevelAuthorVisible)
 		  this.l_textdiv.appendChild(this.l_author);
 
+	//---
+
 	// bottom right div, contains the description
 	this.main.appendChild(this.l_desc);
+
+	//---
 
 	// adds a cleared blank line in order to fix the floated divs
 	this.l_floatclear = document.createElement("br");
