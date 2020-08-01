@@ -8,7 +8,6 @@ add_btn.onclick = function(){
     //we get the level id value
     var txt = document.getElementById("textentry").value;
 
-    // this is obsolete code pog
     if(txt == null){
 	    alert("Add a choice!")
     }else{
@@ -46,8 +45,8 @@ add_btn.onclick = function(){
 					  poll_levelid.setAttribute("id", "poll_levelid");
 					  poll_levelid.setAttribute("name", "poll_levelid");
 					  poll_levelid.setAttribute("type", "hidden");
-					  poll_levelid.setAttribute("value", txt); //replace all instances of " with &quot;, so that the HTML code doesn't get messed up
-
+					  poll_levelid.setAttribute("value", txt);
+					  
 					  var poll_submit = document.createElement("button");
 					  poll_submit.innerHTML = "Send Vote";
 					  poll_submit.setAttribute("id", "poll_submit");
@@ -106,9 +105,9 @@ add_btn.onclick = function(){
                     alert("level: '" + level_name + "' is not featured.")
                 }
             }
-        })
+        });
     }
-}
+};
 
 clear.onclick = clearAllEntries;
 
