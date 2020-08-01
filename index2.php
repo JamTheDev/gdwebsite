@@ -35,8 +35,6 @@
         </div>
 	</div>
 	
-	
-	
 	<?php if ($_SERVER['REQUEST_METHOD'] == "POST"): ?>
 	
 		<?php
@@ -59,20 +57,20 @@
 			
 			//---
 			
-			if ($response_GD === -1) {
-				$GD_doesLevelExist = false;
-			} else {
-				$GD_doesLevelExist = true;
-				
+			$GD_doesLevelExist = ($response_GD !== "-1");
+			$_SESSION['GD_doesLevelExist'] = $GD_doesLevelExist;
+			
+			if ($GD_doesLevelExist) {
 				//convert JSON string to PHP variable (array/object?);
 				$leveldata_GD = json_decode($response_GD);
 				$_SESSION['leveldata_GD'] = $leveldata_GD;
 				
 				//---
 				
-				if ($leveldata_GD->featured) {
-					$GD_isLevelFeatured = true;
-					
+				$GD_isLevelFeatured = $leveldata_GD->featured;
+				$_SESSION['GD_isLevelFeatured'] = $GD_isLevelFeatured;
+				
+				if ($GD_isLevelFeatured) {
 					$url_DB = "https://gdwebsite-1628b.firebaseio.com/" . $levelid . ".json";
 					
 					//--- Get current level vote data from database
@@ -120,22 +118,9 @@
 					
 					$response2_DB = curl_exec($curl_DB);			
 					curl_close($curl_DB);
-				} else {
-					$GD_isLevelFeatured = false;
-					
-					//todo: add a message for a failed vote, which is always due to tampering with code
-					
-					/*
-						an entry other than a featured level ID can only be submitted if
-						the client-side level ID validation fails to work
-					*/
 				}
-				
-				$_SESSION['GD_isLevelFeatured'] = $GD_isLevelFeatured;
 			}
-			
-			$_SESSION['GD_doesLevelExist'] = $GD_doesLevelExist;
-			
+
 			header("Location: ./php/receive.php" , true, 303);
 			exit();
 		?>
