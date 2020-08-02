@@ -140,7 +140,7 @@ body {
 				float: right;
 				
 				background-color: #CFF; /* light cyan/blue */
-				width: calc(54% - 40px);
+				width: calc(60% - 40px);
 				padding: 10px;
 			}
 			
@@ -157,8 +157,8 @@ body {
 				
 				background-color: #6D7; /* lighter green */
 				color: white;
-				width: calc(54% - 40px);
-				height: calc(5em + 20px);
+				width: calc(60% - 40px);
+				height: calc(6.25em + 20px);
 				padding: 10px;
 			}
 		
